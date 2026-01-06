@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortofolioSederhana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Welcome To My Portfolio</h1>
+    <hr>
+
+    <table class="menu">
+        <tr>
+            <td><a href="index.html">Home</a> |</td>
+            <td><a href="profile.html">Profile</a> |</td>
+            <td><a href="project.html">Project</a> |</td>
+            <td><a href="media.html">Media</a> |</td>
+            <td><a href="informasi.html">Informasi</a> |</td>
+            <td><a href="kontak.html">Kontak</a></td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <main class="container">
+
+        <section class="card">
+            <h3>Informasi Kontak</h3>
+            <p>Email : triyaniputri535@email.com</p>
+            <p>No. Telp : 085791417330</p>
+            <p>Alamat : Buaran, Kec. Serpong, Kota Tangerang Selatan, Banten 15310</p>
+            <p>Jam Kerja : Senin – Jumat (09.00 – 17.00)</p>
+        </section>
+
+        <section class="card">
+            <h3>Kirim Pesan</h3>
+            <form onsubmit="kirimPesan(); return false;">
+                <label for="nama">Nama Lengkap</label><br>
+                <input type="text" id="nama" required><br><br>
+
+                <label for="email">Email</label><br>
+                <input type="email" id="email" required><br><br>
+
+                <label for="subjek">Subjek</label><br>
+                <input type="text" id="subjek" required><br><br>
+
+                <label for="pesan">Pesan</label><br>
+                <textarea id="pesan" rows="4" required></textarea><br><br>
+
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </section>
+
+        <section class="card">
+    <h3>Media Sosial</h3>
+    <ul>
+        <li>
+            <a href="https://www.linkedin.com" target="_blank">
+                LinkedIn
+            </a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com" target="_blank">
+                Instagram
+            </a>
+        </li>
+        <li>
+            <a href="https://twitter.com" target="_blank">
+                Twitter
+            </a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com" target="_blank">
+                Facebook
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com" target="_blank">
+                GitHub
+            </a>
+        </li>
+    </ul>
+</section>
+
+
+        <section class="card">
+            <h3>Lokasi Kami</h3>
+            <iframe 
+                src="https://www.google.com/maps?q=tangerang%20selatan&output=embed"
+                width="100%" 
+                height="250" 
+                style="border:0;"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+        </section>
+
+        <section class="card">
+            <h3>Pertanyaan Umum</h3>
+            <p><strong>Q:</strong> Apa saja yang digunakan dalam pembuatan website ini?</p>
+            <p><strong>A:</strong> Website ini dibuat menggunakan HTML sebagai struktur halaman, CSS untuk tampilan, dan sedikit JavaScript.</p>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
