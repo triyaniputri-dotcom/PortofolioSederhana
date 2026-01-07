@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
@@ -7,31 +8,33 @@
 }
 
 body {
+    font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #1d2671, #c33764);
-    color: #ffffff; 
+    color: #ffffff;
     line-height: 1.6;
-}
-
-main {
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
 }
 
-hr {
-    width: 65%;
-    margin: 30px auto;
+header {
+    width: 100%;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+}
+
+header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    color: #ffffff;
+}
+
+header hr {
+    width: 60%;
+    margin: 20px auto;
     height: 4px;
     border: none;
     border-radius: 10px;
@@ -39,7 +42,7 @@ hr {
 }
 
 .menu {
-    margin: 25px auto;
+    margin: 20px auto;
     text-align: center;
 }
 
@@ -61,14 +64,26 @@ hr {
     transform: translateY(-3px);
 }
 
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .card {
     background: rgba(255,255,255,0.96);
     border-radius: 25px;
     padding: 40px;
     margin: 40px 0;
     box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+    color: #2c2c2c;
     animation: cardFade 1s ease;
-    color: #2c2c2c; 
 }
 
 @keyframes cardFade {
@@ -85,16 +100,18 @@ hr {
     background: linear-gradient(135deg, #667eea, #764ba2);
     border-radius: 30px;
     padding: 45px;
-    color: #ffffff; 
+    color: #ffffff;
     box-shadow: 0 30px 60px rgba(0,0,0,0.35);
     margin: 30px 0;
 }
 
 .profile-container {
     display: flex;
+    flex-direction: row;      
+    align-items: flex-start;  
     gap: 35px;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap;         
+    justify-content: center;
 }
 
 .profile-foto img {
@@ -106,10 +123,36 @@ hr {
     box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
 
-.profile-data p, .profile-data li, .profile-data td {
+.profile-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 600px;
+}
+
+.profile-data p, .profile-data td {
     margin-bottom: 12px;
     line-height: 1.8;
-    color: #ffffff; 
+    color: #ffffff;
+    text-align: left;
+}
+
+.profile-data ul {
+    padding-left: 20px;       
+    margin-bottom: 20px;       
+    list-style-type: disc;    
+    text-align: left;          
+}
+
+.profile-data ul li {
+    margin-bottom: 8px;       
+    line-height: 1.5;
+    color: #ffffff;
+    padding: 6px 12px;         
+    border-radius: 8px;
+    background: rgba(0,0,0,0.2);
+    display: inline-block;     
+    margin-right: 8px;       
 }
 
 table.project {
@@ -119,7 +162,7 @@ table.project {
     background: #ffffff;
     border-radius: 20px;
     overflow: hidden;
-    color: #2c2c2c; 
+    color: #2c2c2c;
 }
 
 table.project th {
@@ -159,13 +202,40 @@ table.project td {
     margin-top: 18px;
 }
 
-details {
-    background: #ffffff;
-    padding: 18px;
-    border-radius: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    color: #2c2c2c; 
+.collapsible {
+    background-color: #f1f1f1;
+    color: #333;
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.2s;
+}
+
+.collapsible:hover {
+    background-color: #ddd;
+}
+
+.collapsible::after {
+    content: '\002B'; 
+    float: right;
+}
+
+.collapsible.active::after {
+    content: "\2212"; 
+}
+
+.content {
+    padding: 10px 12px;
+    display: none;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    border-left: 2px solid #ccc;
+    border-radius: 0 0 5px 5px;
 }
 
 footer {
@@ -179,7 +249,12 @@ footer {
 @media (max-width: 768px) {
     .profile-container {
         flex-direction: column;
+        align-items: center;
         text-align: center;
+    }
+
+    .profile-data {
+        align-items: center;
     }
 
     .card {
