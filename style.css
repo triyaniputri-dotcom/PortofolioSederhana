@@ -114,11 +114,11 @@ table.project {
     margin: 20px auto;
     width: 80%;
     border-collapse: collapse;
-    background-color: white;
+    background-color: rgb(82, 146, 199);
 }
 
 table.project th {
-    background-color: #004aad;
+    background-color: #08661c;
     color: white;
     padding: 10px;
 }
