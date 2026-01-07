@@ -7,7 +7,10 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
+    margin: 0;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #1d2671, #c33764);
     color: #ffffff; 
@@ -19,6 +22,11 @@ main {
     max-width: 1200px;
     margin: 40px auto;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 hr {
