@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dialog Box Sederhana</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Website dengan Dialog Box</h1>
+    <p>Klik tombol untuk membuka dialog</p>
+
+    <button class="btn" onclick="showDialog('alert')">Dialog Alert</button>
+    <button class="btn" onclick="showDialog('confirm')">Dialog Konfirmasi</button>
+    <button class="btn" onclick="showDialog('input')">Dialog Input</button>
+    <button class="btn" onclick="showDialog('form')">Dialog Form</button>
+    <div class="result">
+      <h3>Hasil</h3>
+      <p id="result">Belum ada data</p>
+    </div>
+  </div>
+  <!-- Dialog Alert -->
+  <div id="alertDialog" class="dialog">
+    <div class="dialog-content">
+      <span class="close" onclick="closeDialog('alert')">&times;</span>
+      <h3>Informasi</h3>
+      <p>Ini adalah contoh dialog alert Sederhana</p>
+      <button class="btn" onclick="closeDialog('alert')">OK</button>
+    </div>
+  </div>
+
+  <!--Dialog Konfirmasi-->
+  <div id="confirmDialog" class="dialog">
+    <div class="dialog-content">
+      <span class="close" onclick="closeDialog('confirm')">&times;</span>
+      <h3>Konfirmasi</h3>
+      <p>Apakah Anda yakin ingin menghapus data ini</p>
+      <button class="btn" onclick="confirmAction('true')">Ya</button>
+      <button class="btn" onclick="confirmAction('false')">Tidak</button>
+    </div>
+  </div>
+
+  <!--Dialog Input-->
+  <div id="inputDialog" class="dialog">
+    <div class="dialog-content">
+      <span class="close" onclick="closeDialog('input')">&times;</span>
+      <h3>Input Data</h3>
+      <input type="text" id="nameInput" placeholder="Masukkan Nama Anda">
+      <button class="btn" onclick="submitInput()">Submit</button>
+    </div>
+  </div>
+
+  <!--Dialog Form-->
+  <div id="formDialog" class="dialog">
+    <div class="dialog-content">
+      <span class="close" onclick="closeDialog('form')">&times;</span>
+      <h3>Form Pendaftaran</h3>
+
+      <div class="form-group">
+        <label>Nama Lengkap</label>
+        <input type="text" id="fullName" placeholder="Masukkan nama lengkap">
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Masukkan email">
+      </div>
+
+      <div class="form-group">
+        <label>Jenis Kelamin</label>
+        <select id="gender">
+          <option value="">Pilih Jenis Kelamin</option>
+          <option value="Laki-laki">Laki-laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Pesan</label>
+        <textarea id="message" placeholder="Tulis Pesan Anda" rows="3"></textarea>
+      </div>
+
+      <button class="btn" onclick="submitForm()">Daftar</button>
+    </div>
+  </div> 
+  <script>
+    function showDialog(type) {
+      document.getElementById(type + 'Dialog').style.display = 'block';
+    }
+     function closeDialog(type) {
+      document.getElementById(type + 'Dialog').style.display = 'none';
+    }
+    function confirmAction(confirmed) {
+      const result = document.getElementById('result');
+      if(confirmed) {
+        result.innerHTML = '<strong>Status: </stong> Data berhasil dihapus<br><strong>Waktu:</strong>' + new Date().toLocaleTimeString();
+      } else {
+        result.innerHTML = '<strong>Status: </stong> Penghapusan dibatalkan<br><strong>Waktu:</strong>' + new Date().toLocaleTimeString();
+      }
+      closeDialog('confirm');
+    }
+
+    function submitInput() {
+      const name = document.getElementById('nameInput').value;
+      const result = document.getElementById('result');
+
+      if (name.trim() === '') {
+          alert('Harap masukan nama!');
+          return;
+      }
+      result.innerHTML = `<strong>Nama:</strong> ${name}<br><strong>Waktu:</strong> ${new Date().toLocaleTimeString()}`;
+      document.getElementById('nameInput').value = '';
+      closeDialog('input');
+    }
+    function submitForm() {
+      const fullName = document.getElementById('fullName').value;
+      const email = document.getElementById('email').value;
+      const gender = document.getElementById('gender').value;
+      const message = document.getElementById('message').value;
+      const result = document.getElementById('result');
+
+      // Validasi form
+      if (!fullName || !email || !gender || !message) {
+          alert('Harap lengkapi semua field!');
+          return;
+      }
+
+      if(!validateEmail(email)) {
+        alert('Format email tidak valid!');
+        return;
+      }
+      
+      //Tampilkan hasil
+      result.innerHTML = `
+          <strong>Status:</strong> Pendaftaran berhasil!<br>
+          <strong>Nama:</strong> ${fullName}<br>
+          <strong>Email:</strong> ${email}<br>
+          <strong>Jenis Kelamin:</strong> ${gender}<br>
+          <strong>Pesan:</strong> ${message}<br>
+          <strong>Waktu:</strong> ${new Date().toLocaleString()}`;
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+    //Tutup dialog ketika klik di luar konten 
+    window.onclick = function (event) {
+        const dialogs = document.getElementsByClassName('dialog');
+        for (let dialog of dialogs) {
+            if (event.target === dialog) {
+                dialog.style.display = 'none';
+            }
+        }
+    }
+    }
+  </script>
+</body>
+</html>

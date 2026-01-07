@@ -1,218 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: beige;
-    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    color: #ffffff; 
+    line-height: 1.6;
 }
 
 main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
     flex: 1;
 }
 
 hr {
-    width: 80%;
-    border: 1px solid blue;
-}
-
-.card {
-    background-color: #ffffff;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-main.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
+    width: 65%;
+    margin: 30px auto;
+    height: 4px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
 }
 
 .menu {
-    margin: 10px auto;
-}
-
-.menu td {
-    padding: 5px;
+    margin: 25px auto;
+    text-align: center;
 }
 
 .menu a {
     text-decoration: none;
-    color: blue;
-    font-weight: bold;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
 }
 
 .menu a:hover {
-    text-decoration: underline;
+    background: rgba(255,255,255,0.35);
+    color: #000000;
+    transform: translateY(-3px);
 }
 
-.timeline {
-    list-style: none;
-    padding-left: 20px;
-    text-align: left;
-    border-left: 2px solid #2c3e50;
+.card {
+    background: rgba(255,255,255,0.96);
+    border-radius: 25px;
+    padding: 40px;
+    margin: 40px 0;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+    animation: cardFade 1s ease;
+    color: #2c2c2c; 
 }
 
-.timeline li {
-    margin-bottom: 10px;
-    line-height: 1.4;
+@keyframes cardFade {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-footer {
-    background-color: rgb(5, 128, 177);
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+.card h2 {
+    color: #7b2ff7;
+    margin-bottom: 20px;
 }
 
 .profile-box {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: rgba(230, 13, 13, 0.45);
-    padding: 25px;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 30px;
+    padding: 45px;
+    color: #ffffff; 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+    margin: 30px 0;
 }
 
 .profile-container {
     display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.profile-data {
-    text-align: left;
+    gap: 35px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .profile-foto img {
-    width: 180px;
-    height: 230px;
+    width: 220px;
+    height: 280px;
     object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid #004aad;
+    border-radius: 25px;
+    border: 5px solid #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
 
-ul {
-    padding-left: 20px;
-    text-align: left;
-}
-
-ul li {
-    margin-bottom: 5px;
-    line-height: 1.4;
+.profile-data p, .profile-data li, .profile-data td {
+    margin-bottom: 12px;
+    line-height: 1.8;
+    color: #ffffff; 
 }
 
 table.project {
-    margin: 20px auto;
-    width: 80%;
+    width: 100%;
     border-collapse: collapse;
-    background-color: rgb(82, 146, 199);
+    margin-top: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    color: #2c2c2c; 
 }
 
 table.project th {
-    background-color: #08661c;
-    color: white;
-    padding: 10px;
+    background: linear-gradient(135deg, #7b2ff7, #f107a3);
+    color: #ffffff;
+    padding: 16px;
 }
 
 table.project td {
-    padding: 8px;
+    padding: 14px;
     text-align: center;
-}
-
-table.project tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-table.project tr:hover {
-    background-color: #ddd;
-}
-
-.card img {
-    width: 300px;
-    height: 350px;
-    object-fit: cover;
-    margin: 5px;
-    border-radius: 8px;
-}
-
-audio {
-    width: 100%;
 }
 
 .layanan-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
 }
 
 .price-box {
-    border: 1px solid #1f1e1e;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: rgb(8, 158, 15);
-    color: white;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    transition: all 0.4s ease;
+}
+
+.price-box:hover {
+    transform: translateY(-12px) scale(1.03);
 }
 
 .harga {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 18px;
 }
 
 details {
-    padding: 10px;
-    background-color: #eee;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: left;
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    color: #2c2c2c; 
 }
 
-.card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.card ul li {
-    margin: 8px 0;
-}
-
-.card ul li a {
-    text-decoration: none;
-    color: blue;
-    font-weight: bold;
-}
-
-.card ul li a:hover {
-    color: darkblue;
-    text-decoration: underline;
+footer {
+    margin-top: 60px;
+    background: linear-gradient(135deg, #000428, #004e92);
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 0;
 }
 
 @media (max-width: 768px) {
     .profile-container {
         flex-direction: column;
-        align-items: center;
-    }
-
-    .profile-data {
         text-align: center;
     }
 
-    ul {
-        text-align: center;
+    .card {
+        padding: 30px 22px;
     }
 
-    .timeline {
-        padding-left: 10px;
+    .menu a {
+        margin: 5px;
+        display: inline-block;
     }
 }

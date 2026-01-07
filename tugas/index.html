@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator  Nilai Mahasiswa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-calculator"></i>Kalkulator Nilai Mahasiswa</h1>
+        </header>
+        <div class="content">
+            <section class="input-section">
+                <h2><i class="fas fa-edit"></i>Input Nilai</h2>
+
+                <div class="form-group">
+                    <label for="nama">Nama Mahasiswa</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama mahasiswa">
+                </div>
+                
+                <div class="form-group">
+                    <label for="nim">NIM</label>
+                    <input type="text" id="nim" placeholder="Masukkan NIM">
+                </div>
+
+                <div class="form-group">
+                    <label for="matkul">Mata Kuliah</label>
+                    <input type="text" id="matkul" placeholder="Masukkan nama mata kuliah">
+                </div>
+                
+                <div class="form-group">
+                    <label for="tugas">Nilai Tugas <span class="range-info">(0-100)</span></label>
+                    <input type="number" id="tugas" min="0" max="100" placeholder="Masukkan nilai tugas">
+                </div>
+
+                <div class="form-group">
+                    <label for="uts">Nilai UTS <span class="range-info">(0-100)</span></label>
+                    <input type="number" id="uts" min="0" max="100" placeholder="Masukkan nilai UTS">
+                </div>
+
+                <div class="form-group">
+                    <label for="uas">Nilai UAS <span class="range-info">(0-100)</span></label>
+                    <input type="number" id="uas" min="0" max="100" placeholder="Masukkan nilai UAS">
+                </div>
+
+                <div class="form-group">
+                    <label for="kehadiran">Presentase Kehadiran <span class="range-info">(0-100%)</span></label>
+                    <input type="number" id="kehadiran" min="0" max="100" placeholder="Masukkan presentase kehadiran">
+                </div>
+
+                <div class="button-group">
+                    <button class="calculate-btn" id="hitungBtn">
+                        <i class="fas fa-calculator"></i> Hitung Nilai
+                    </button>
+                    <button class="reset-btn" id="resetBtn">
+                        <i class="fas fa-redo"></i> Reset Form
+                    </button>
+                </div>
+            </section>
+            <section class="result-section">
+                <h2><i class="fas fa-chart-line"></i>Hasil Perhitungan</h2>
+
+                <div class="result-display">
+                    <p id="resultTitle">Masukkan data nilai terlebih dahulu</p>
+
+                    <div class="nilai-final" id="nilaiFinal">-</div>
+                    <div class="grade" id="gradeDisplay">-</div>
+                    <div class="status" id="statusDisplay">-</div>
+
+                    <div class="details">
+                        <h3>Detail Perhitungan</h3>
+                        <div class="detail-item">
+                            <span>Nilai Tugas (20%) :</span>
+                            <span id="detailTugas">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Nilai UTS (30%) :</span>
+                            <span id="detailUTS">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Nilai UAS (40%) :</span>
+                            <span id="detailUAS">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Kehadiran (10%) :</span>
+                            <span id="detailKehadiran">-</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-box">
+                                    <h3><i class="fas fa-info-circle"></i> Kriteria Penilaian</h3>
+                                    <ul>
+                                        <li><strong>A</strong>: 85 - 100 (LULUS)</li>
+                                        <li><strong>B</strong>: 70 - 84 (LULUS)</li>
+                                        <li><strong>C</strong>: 60 - 69 (LULUS)</li>
+                                        <li><strong>D</strong>: 50 - 59 (TIDAK LULUS)</li>
+                                        <li><strong>E</strong>: 0 - 49 (TIDAK LULUS)</li>
+                                    </ul>
+                                    <P style="margin-top: 10px;"><strong>Rumus :</strong> (Tugas x 20%) + (UTS x 30%) + (UAS x 40%) + (Kehadiran x 10%)</P>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>Program Kalkulator Nilai Mahasiswa &copy; 2025 | Dibuat dengan HTML, CSS, dan JavaScript</p>
+        </footer>
+    </div>
+    <script src="hitungmahasiswa.js"></script>
+</body>
+</html>

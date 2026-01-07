@@ -20,29 +20,45 @@
         </tr>
     </table>
     <hr>
-    <div class="container">
-    <div class="card">
-        <h3>Video</h3>
-        <video controls width="300">
+    <section class="card">
+    <h2>Dokumentasi & media Proyek</h2>
+
+   <details>
+        <summary><strong>📄 Klik untuk membuka dokumen laporan</strong></summary>
+        <div style="margin-top:15px;">
+            <a href="dokument&audio/UAS_Pemrograman WEB 1.pdf" target="_blank">
+                👉 Buka Dokumen Laporan Proyek (PDF)
+            </a>
+        </div>
+    </details>
+
+    <br>
+    <details>
+        <summary><strong>📸 Dokumentasi Foto</strong></summary>
+        <div style="margin-top:15px; display:flex; gap:15px; flex-wrap:wrap;">
+            <img src="foto&video/kampusviktor.jpg" alt="Dokumentasi Foto 1">
+            <img src="foto&video/unpamviktor..jpg" alt="Dokumentasi Foto 2">
+        </div>
+    </details>
+
+    <br>
+    <details>
+        <summary><strong>🎬 Dokumentasi Video</strong></summary>
+        <video controls width="100%" style="margin-top:15px; border-radius:15px;">
             <source src="foto&video/videoplayback.mp4" type="video/mp4">
-            browser anda tidak mendukung video
+            Browser Anda tidak mendukung pemutar video.
         </video>
-    </div>
-    <div class="card">
-        <h3>Foto</h3>
-        <img src="foto&video/kampusviktor.jpg" alt="Foto">
-        <img src="foto&video/unpamviktor..jpg" alt="Foto">
-    </div>
+    </details>
 
-    <div class="card">
-        <h3>Audio</h3>
-        <audio controls>
+    <br>
+    <details>
+        <summary><strong>🎧 Dokumentasi Audio</strong></summary>
+        <audio controls style="margin-top:15px;">
             <source src="dokument&audio/audio1.mpeg" type="audio/mpeg">
+            Browser Anda tidak mendukung audio.
         </audio>
-    </div>
+    </details>
 
-    <div class="card">
-        <h3>Dokumen</h3>
-        <a href="dokument&audio/UAS_Pemrograman WEB 1.pdf">Lihat Dokumen PDF</a>
-    </div>
-</div>
+        </section>
+    </body>
+</html>
