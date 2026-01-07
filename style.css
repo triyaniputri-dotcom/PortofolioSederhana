@@ -1,4 +1,4 @@
-/*GLOBAL / SEMUA HALAMAN */
+
 * {
     box-sizing: border-box;
 }
@@ -22,7 +22,6 @@ hr {
     border: 1px solid blue;
 }
 
-/* CARD (DIGUNAKAN DI BANYAK HALAMAN) */
 .card {
     background-color: #ffffff;
     padding: 20px;
@@ -31,15 +30,12 @@ hr {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* CONTAINER UTAMA */
 main.container {
     width: 90%;
     max-width: 1000px;
     margin: auto;
 }
 
-/*
-   MENU NAVIGASI (SEMUA HALAMAN) */
 .menu {
     margin: 10px auto;
 }
@@ -58,8 +54,6 @@ main.container {
     text-decoration: underline;
 }
 
-/*HALAMAN INDEX */
-/* TIMELINE */
 .timeline {
     list-style: none;
     padding-left: 20px;
@@ -79,7 +73,6 @@ footer {
     text-align: center;
 }
 
-/* HALAMAN PROFILE */
 .profile-box {
     max-width: 800px;
     margin: 20px auto;
@@ -107,7 +100,6 @@ footer {
     border: 2px solid #004aad;
 }
 
-/* LIST (KEAHLIAN, DATA DIRI, DLL) */
 ul {
     padding-left: 20px;
     text-align: left;
@@ -118,7 +110,6 @@ ul li {
     line-height: 1.4;
 }
 
-/* HALAMAN PROJECT */
 table.project {
     margin: 20px auto;
     width: 80%;
@@ -145,7 +136,6 @@ table.project tr:hover {
     background-color: #ddd;
 }
 
-/* HALAMAN MEDIA */
 .card img {
     width: 300px;
     height: 350px;
@@ -158,8 +148,6 @@ audio {
     width: 100%;
 }
 
-/* HALAMAN INFORMASI */
-/* LAYANAN */
 .layanan-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -181,7 +169,6 @@ audio {
     margin-top: 10px;
 }
 
-/* FAQ / PERTANYAAN UMUM */
 details {
     padding: 10px;
     background-color: #eee;
@@ -190,7 +177,6 @@ details {
     text-align: left;
 }
 
-/* HALAMAN KONTAK & SOSIAL MEDIA */
 .card ul {
     list-style: none;
     padding: 0;
@@ -212,7 +198,6 @@ details {
     text-decoration: underline;
 }
 
-/*RESPONSIVE (HP / TABLET) */
 @media (max-width: 768px) {
     .profile-container {
         flex-direction: column;
